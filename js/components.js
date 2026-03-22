@@ -5,7 +5,7 @@
 
 const NAV_HTML = `
 <nav class="nav" id="nav">
-  <a href="../index.html" class="nav-logo">
+  <a href="/canopy-consulting/index.html" class="nav-logo">
     <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M40 4 L74 14 L74 58 Q74 80 40 90 Q6 80 6 58 L6 14 Z" fill="none" stroke="#1A4D3A" stroke-width="4" stroke-linejoin="round"/>
       <path d="M18 14 L18 24 L40 24 L62 24 L62 14" fill="none" stroke="#1A4D3A" stroke-width="4" stroke-linejoin="round"/>
@@ -28,11 +28,11 @@ const NAV_HTML = `
     </div>
   </a>
   <ul class="nav-links">
-    <li><a href="../pages/about.html">About</a></li>
-    <li><a href="../pages/journey.html">The Journey</a></li>
-    <li><a href="../pages/services.html">Services</a></li>
-    <li><a href="../pages/case-study.html">Case Study</a></li>
-    <li><a href="../pages/contact.html" class="nav-cta">Book a Call</a></li>
+    <li><a href="/canopy-consulting/pages/about.html">About</a></li>
+    <li><a href="/canopy-consulting/pages/journey.html">The Journey</a></li>
+    <li><a href="/canopy-consulting/pages/services.html">Services</a></li>
+    <li><a href="/canopy-consulting/pages/case-study.html">Case Study</a></li>
+    <li><a href="/canopy-consulting/pages/contact.html" class="nav-cta">Book a Call</a></li>
   </ul>
 </nav>`;
 
@@ -47,29 +47,29 @@ const FOOTER_HTML = `
     <div class="footer-col">
       <h5>Navigate</h5>
       <ul>
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../pages/about.html">About</a></li>
-        <li><a href="../pages/journey.html">The Journey</a></li>
-        <li><a href="../pages/services.html">Services</a></li>
-        <li><a href="../pages/case-study.html">Case Study</a></li>
-        <li><a href="../pages/contact.html">Contact</a></li>
+        <li><a href="/canopy-consulting/index.html">Home</a></li>
+        <li><a href="/canopy-consulting/pages/about.html">About</a></li>
+        <li><a href="/canopy-consulting/pages/journey.html">The Journey</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Services</a></li>
+        <li><a href="/canopy-consulting/pages/case-study.html">Case Study</a></li>
+        <li><a href="/canopy-consulting/pages/contact.html">Contact</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a href="../pages/services.html">Business Audit</a></li>
-        <li><a href="../pages/services.html">Launch & Foundation</a></li>
-        <li><a href="../pages/services.html">Brand & Presence</a></li>
-        <li><a href="../pages/services.html">Systems Setup</a></li>
-        <li><a href="../pages/services.html">Growth & Scale</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Business Audit</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Launch & Foundation</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Brand & Presence</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Systems Setup</a></li>
+        <li><a href="/canopy-consulting/pages/services.html">Growth & Scale</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Contact</h5>
       <ul>
         <li><a href="mailto:hello@canopyconsulting.bz">hello@canopyconsulting.bz</a></li>
-        <li><a href="../pages/contact.html">Book a Discovery Call</a></li>
+        <li><a href="/canopy-consulting/pages/contact.html">Book a Discovery Call</a></li>
         <li><a href="#">LinkedIn</a></li>
       </ul>
     </div>
