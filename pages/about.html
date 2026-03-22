@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Canopy Consulting</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .about-body { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+
+    .about-photo-placeholder {
+      background: var(--light-green);
+      border: 2px dashed rgba(26,77,58,0.2);
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .about-photo-placeholder span { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); }
+
+    .about-text p { font-size: 16px; line-height: 1.9; color: var(--text-mid); margin-bottom: 20px; }
+
+    .about-text p:first-of-type { font-family: var(--font-serif); font-size: 20px; color: var(--text-dark); }
+
+    .values-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); margin-top: 56px; }
+
+    .value-card { background: var(--offwhite); padding: 40px 32px; }
+    .value-card:hover { background: var(--light-green); }
+
+    .vc-num { font-family: var(--font-display); font-size: 36px; font-weight: 900; color: rgba(26,77,58,0.08); margin-bottom: 12px; }
+    .vc-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .vc-text { font-size: 14px; line-height: 1.8; color: var(--text-mid); }
+
+    .belize-section { background: var(--forest); padding: 100px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+    .belize-map-placeholder {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      aspect-ratio: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+
+    .belize-map-placeholder span { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+  <div id="nav-slot"></div>
+
+  <!-- ── PAGE HERO ── -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>About</span></div>
+      <h1>Built by someone who has been <em>in the thick of it.</em></h1>
+      <p class="lead">Canopy Consulting was founded on one belief: that every business deserves a clear path forward — and a partner who will walk it with them.</p>
+    </div>
+  </div>
+
+  <!-- ── FOUNDER SECTION ── -->
+  <section class="section">
+    <div class="about-body">
+      <div class="about-photo-placeholder reveal">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="rgba(26,77,58,0.3)" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span>Founder photo — Martin Gayot</span>
+      </div>
+      <div class="about-text reveal">
+        <div class="eyebrow" style="margin-bottom:16px;"><div class="eyebrow-line"></div><span>The Founder</span></div>
+        <h2 class="section-title" style="margin-bottom:24px;">Martin Gayot</h2>
+        <p>[PLACEHOLDER — Martin's personal story goes here. Talk about your background, your connection to Belize, what drove you to start Canopy Consulting, and what you have seen in small businesses that made this feel necessary. Make it personal and specific.]</p>
+        <p>[PLACEHOLDER — Your professional background: what experience you bring, what skills you have built, why clients can trust your guidance. Keep it honest and grounded rather than corporate.]</p>
+        <p>[PLACEHOLDER — The Belize connection: why building here matters, what you understand about the market that others do not, and what you are working toward with the business over the next three years.]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VALUES ── -->
+  <section class="section section--cream">
+    <div class="section-header">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>What We Stand For</span></div>
+      <h2 class="section-title">Our values are not a wall poster.<br>They are how we work.</h2>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="vc-num">01</div>
+        <h3 class="vc-title">Radical Honesty</h3>
+        <p class="vc-text">We tell clients what they need to hear, not what they want to hear. If a business is not ready for the next step, we say so. Trust is built on truth.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="vc-num">02</div>
+        <h3 class="vc-title">Build, Don't Just Advise</h3>
+        <p class="vc-text">A plan without execution is just a document. We stay in the work with clients, helping implement and iterate until things actually function.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="vc-num">03</div>
+        <h3 class="vc-title">Show Your Work</h3>
+        <p class="vc-text">We document our own business journey publicly. If we ask clients to trust our process, the least we can do is prove it works on our own business first.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="vc-num">04</div>
+        <h3 class="vc-title">Deep Roots</h3>
+        <p class="vc-text">We are not parachuting in. We are Belizean, we know this market, and we are committed to building something that serves this community for the long term.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="vc-num">05</div>
+        <h3 class="vc-title">Clarity Over Complexity</h3>
+        <p class="vc-text">Business consulting should not feel overwhelming. We strip away jargon and get to what actually matters: clear decisions, clear systems, clear results.</p>
+      </div>
+      <div class="value-card reveal">
+        <div class="vc-num">06</div>
+        <h3 class="vc-title">Unstoppable by Design</h3>
+        <p class="vc-text">Everything we build with clients is designed to outlast the engagement. When we are done, the business runs better without us — that is the goal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── BELIZE SECTION ── -->
+  <div class="belize-section">
+    <div>
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Rooted in Belize</span></div>
+      <h2 class="section-title light" style="margin-bottom:16px;">Sub Umbra Floreo.</h2>
+      <p class="section-lead light" style="margin-bottom:24px;">Under the shade, we flourish. It is the national motto of Belize — and it is the idea at the heart of everything Canopy Consulting does.</p>
+      <p style="font-size:15px;line-height:1.8;color:rgba(255,255,255,0.6);max-width:480px;margin-bottom:36px;">[PLACEHOLDER — Say something meaningful about Belize's business landscape, the opportunity you see, the challenges small businesses face here, and what it means to you to be building something rooted in this place.]</p>
+      <a href="pages/contact.html" class="btn btn-gold">Work With Us</a>
+    </div>
+    <div class="belize-map-placeholder reveal">
+      <span>Belize map or image</span>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-strip">
+    <h2>Ready to start the conversation?</h2>
+    <div class="rule"></div>
+    <p>Book a free discovery call. No pitch, no pressure — just clarity on where your business is and what it needs.</p>
+    <a href="pages/contact.html" class="btn btn-gold">Book a Free Discovery Call</a>
+  </div>
+
+  <div id="footer-slot"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

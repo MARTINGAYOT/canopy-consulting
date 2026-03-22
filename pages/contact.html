@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Canopy Consulting</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .contact-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 70vh; }
+
+    .contact-left {
+      background: var(--forest);
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-right { padding: 80px; background: var(--offwhite); }
+
+    .contact-left h2 { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .contact-left p  { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.65); margin-bottom: 40px; }
+
+    .contact-details { display: flex; flex-direction: column; gap: 20px; }
+
+    .contact-detail { display: flex; align-items: flex-start; gap: 14px; }
+
+    .cd-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .cd-icon svg { width: 16px; height: 16px; }
+
+    .cd-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 3px; }
+    .cd-value { font-size: 14px; color: rgba(255,255,255,0.75); }
+
+    .contact-motto {
+      font-family: var(--font-serif);
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 24px;
+      margin-top: 40px;
+    }
+
+    /* Form styles */
+    .contact-right h3 { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .contact-right .sub { font-size: 14px; color: var(--text-light); margin-bottom: 36px; }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-group label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-family: var(--font-sans);
+      font-size: 14px;
+      color: var(--text-dark);
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--forest); }
+
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-submit { margin-top: 8px; }
+
+    .form-note { font-size: 12px; color: var(--text-light); margin-top: 12px; }
+
+    /* Waitlist section */
+    .waitlist-section { background: var(--cream); padding: 80px; }
+
+    .waitlist-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); margin-top: 40px; }
+
+    .wl-card { background: var(--cream); padding: 36px 32px; }
+    .wl-card:hover { background: #fff; }
+    .wl-phase { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .wl-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .wl-desc  { font-size: 13px; line-height: 1.7; color: var(--text-mid); }
+
+    /* FAQ */
+    .faq-section { padding: 100px 80px; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 80px; margin-top: 56px; }
+
+    .faq-item {}
+    .faq-q { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--forest); margin-bottom: 10px; }
+    .faq-a { font-size: 14px; line-height: 1.8; color: var(--text-mid); }
+  </style>
+</head>
+<body>
+  <div id="nav-slot"></div>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Contact</span></div>
+      <h1>Let's start with an <em>honest conversation.</em></h1>
+      <p class="lead">No pitch. No pressure. Just 30 minutes to understand where your business is and whether we are the right fit to help.</p>
+    </div>
+  </div>
+
+  <!-- ── CONTACT BODY ── -->
+  <div class="contact-body">
+    <div class="contact-left">
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px;"><div class="eyebrow-line"></div><span>Get in Touch</span></div>
+        <h2>We would love to hear about your business.</h2>
+        <p>Whether you are just starting out, already running and ready to fix things, or simply curious about what the journey looks like — reach out. The first conversation is always free.</p>
+        <div class="contact-details">
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+            <div><div class="cd-label">Email</div><div class="cd-value">hello@canopyconsulting.bz</div></div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div><div class="cd-label">Based In</div><div class="cd-value">Belize · Remote delivery worldwide</div></div>
+          </div>
+          <div class="contact-detail">
+            <div class="cd-icon"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+            <div><div class="cd-label">Response Time</div><div class="cd-value">Within 24 hours</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-motto">Sub Umbra Floreo — Under the shade, we flourish.</div>
+    </div>
+
+    <div class="contact-right reveal">
+      <h3>Book a Free Discovery Call</h3>
+      <p class="sub">Fill out this form and we will reach out within 24 hours to schedule your call.</p>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" placeholder="Martin">
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" placeholder="Gayot">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="you@yourbusiness.com">
+        </div>
+        <div class="form-group">
+          <label>Business Name</label>
+          <input type="text" placeholder="Your Business">
+        </div>
+        <div class="form-group">
+          <label>Where are you in your journey?</label>
+          <select>
+            <option value="" disabled selected>Select a phase...</option>
+            <option>Phase 1 — Just starting out, need a foundation</option>
+            <option>Phase 2 — Need a website and digital presence</option>
+            <option>Phase 3 — Running but chaotic, need systems</option>
+            <option>Phase 4 — Need to optimize and improve profit</option>
+            <option>Phase 5 — Ready to scale</option>
+            <option>Not sure — I need a Business Audit first</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Tell us a little about your business and your biggest challenge</label>
+          <textarea placeholder="Share as much or as little as you like..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-dark" style="width:100%;text-align:center;">Send My Request</button>
+          <p class="form-note">We do not share your information with anyone. You will hear back within 24 hours.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ── WAITLIST ── -->
+  <div class="waitlist-section">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Coming Soon</span></div>
+    <h2 class="section-title">Join the waitlist for Phases 3–5.</h2>
+    <div class="waitlist-cards">
+      <div class="wl-card reveal">
+        <div class="wl-phase">Phase 3 — Systems</div>
+        <div class="wl-title">Systems Setup Package</div>
+        <p class="wl-desc">CRM, automation, SOPs, and process design. Be the first to know when this launches — and get an early adopter rate.</p>
+      </div>
+      <div class="wl-card reveal">
+        <div class="wl-phase">Phases 4 & 5 — Optimization & Scale</div>
+        <div class="wl-title">Growth & Scale Program</div>
+        <p class="wl-desc">KPI dashboards, AI integration, profitability optimization, and fractional COO advisory. Coming as we grow.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FAQ ── -->
+  <div class="faq-section">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Common Questions</span></div>
+    <h2 class="section-title">Before you reach out.</h2>
+    <div class="faq-grid">
+      <div class="faq-item reveal">
+        <div class="faq-q">Is the discovery call really free?</div>
+        <div class="faq-a">Yes, completely. It is a 30-minute call to understand your business and see if we are the right fit. No pitch, no obligation, no invoice.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do I need to be in Belize to work with you?</div>
+        <div class="faq-a">No. Canopy Consulting is remote-first. We deliver all services via video calls, shared documents, and cloud tools. We work with clients anywhere in the world.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What if I am not sure which phase I need?</div>
+        <div class="faq-a">That is exactly what the Business Audit is for. We assess where you are, identify what is missing, and tell you clearly what you need. Start there.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">How long do engagements typically take?</div>
+        <div class="faq-a">Phase 1 and 2 packages typically take 3 to 6 weeks depending on scope. The Business Audit takes 1 to 2 weeks. Retainer engagements are ongoing monthly.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What does the Business Audit include?</div>
+        <div class="faq-a">A deep-dive call, a full review of your current operations, written findings, identification of inefficiencies and missed revenue, and a clear prioritized action plan.</div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can I start with just one service and expand later?</div>
+        <div class="faq-a">Absolutely. Most clients start with a Business Audit, then move into Phase 1 or 2 work. The journey is designed to be taken one step at a time.</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-slot"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

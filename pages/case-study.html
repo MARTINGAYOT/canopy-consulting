@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — Canopy Consulting</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .cs-intro { padding: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+    .cs-timeline { padding: 0 80px 100px; }
+
+    .cs-phase-group { margin-bottom: 64px; }
+
+    .cs-phase-label {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cs-phase-label-line { flex: 1; height: 1px; background: var(--border); }
+
+    .cs-phase-label span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--amber);
+      white-space: nowrap;
+    }
+
+    .cs-entries { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2px; background: var(--border); }
+
+    .cs-entry {
+      background: var(--offwhite);
+      padding: 36px 32px;
+      position: relative;
+      transition: background 0.2s;
+    }
+
+    .cs-entry:hover { background: var(--light-green); }
+
+    .cs-entry.live { border-top: 3px solid var(--amber); }
+    .cs-entry.in-progress { border-top: 3px solid var(--mid-green); }
+    .cs-entry.coming { border-top: 3px solid var(--border); opacity: 0.6; }
+
+    .cs-status {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .cs-status.live     { color: var(--amber); }
+    .cs-status.progress { color: var(--mid-green); }
+    .cs-status.coming   { color: var(--text-light); }
+
+    .cs-entry-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+
+    .cs-entry-desc { font-size: 13px; line-height: 1.75; color: var(--text-mid); margin-bottom: 16px; }
+
+    .cs-entry-date { font-size: 11px; color: var(--text-light); }
+
+    .cs-entry-link { font-size: 12px; font-weight: 700; color: var(--forest); text-decoration: underline; margin-top: 12px; display: inline-block; }
+
+    .cs-featured { background: var(--forest); padding: 80px; margin: 0 80px 80px; }
+
+    .cs-featured h3 { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+    .cs-featured p  { font-size: 15px; line-height: 1.85; color: rgba(255,255,255,0.65); max-width: 640px; }
+
+    .meta-strip {
+      background: var(--cream);
+      padding: 60px 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background-color: var(--cream);
+    }
+
+    .meta-item { padding: 32px; }
+
+    .meta-label { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+    .meta-value { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--forest); }
+  </style>
+</head>
+<body>
+  <div id="nav-slot"></div>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Live Case Study</span></div>
+      <h1>We build it. <em>You watch.</em> Then you hire us.</h1>
+      <p class="lead">We are building Canopy Consulting using our own five-phase framework — fully documented, in real time. This is the most honest proof we can offer.</p>
+    </div>
+  </div>
+
+  <!-- ── META STRIP ── -->
+  <div class="meta-strip">
+    <div class="meta-item"><div class="meta-label">Business</div><div class="meta-value">Canopy Consulting</div></div>
+    <div class="meta-item"><div class="meta-label">Industry</div><div class="meta-value">Business Consulting</div></div>
+    <div class="meta-item"><div class="meta-label">Current Phase</div><div class="meta-value">Phase 2 — Presence</div></div>
+    <div class="meta-item"><div class="meta-label">Started</div><div class="meta-value">2025</div></div>
+  </div>
+
+  <!-- ── INTRO ── -->
+  <div class="cs-intro">
+    <div>
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Why We Do This</span></div>
+      <h2 class="section-title">The most powerful proof is doing it yourself.</h2>
+      <p class="section-lead">We believe in radical transparency. Rather than asking you to trust a process you have never seen, we decided to run it on ourselves — and show you every step.</p>
+    </div>
+    <div>
+      <p style="font-size:15px;line-height:1.85;color:var(--text-mid);margin-bottom:20px;">Every naming decision, every design choice, every business plan section, every system we set up — it is all documented here. Not as polished marketing, but as honest, real-time documentation of what building a business actually looks like when you do it right.</p>
+      <p style="font-size:15px;line-height:1.85;color:var(--text-mid);">When you hire Canopy Consulting, you are not buying a promise. You are buying a process you have already watched work.</p>
+    </div>
+  </div>
+
+  <!-- ── FEATURED POST ── -->
+  <div class="cs-featured reveal">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Latest Update</span></div>
+    <h3>[PLACEHOLDER — Most recent case study post title]</h3>
+    <p>[PLACEHOLDER — Short excerpt from the most recent case study update. This will pull in dynamically as you add posts. For now, describe what is currently happening in your build — the website development process, the decisions you are making, and what you are learning.]</p>
+    <br>
+    <a href="#" class="btn btn-gold" style="margin-top:16px;">Read the Full Update</a>
+  </div>
+
+  <!-- ── PHASE 1 ENTRIES ── -->
+  <div class="cs-timeline">
+
+    <div class="cs-phase-group">
+      <div class="cs-phase-label">
+        <span>🌱 Phase 1 — Foundation</span>
+        <div class="cs-phase-label-line"></div>
+        <span class="badge badge-gold">Complete</span>
+      </div>
+      <div class="cs-entries">
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Choosing the Name</div>
+          <p class="cs-entry-desc">How we went from a blank page to "Canopy Consulting" — the brainstorming process, the shortlist, the final decision, and why the name works.</p>
+          <div class="cs-entry-date">Phase 1 · Step 1</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Defining the Tagline</div>
+          <p class="cs-entry-desc">Why "Deep roots. Wide reach. Unstoppable growth." — and how we developed the positioning that sits behind it.</p>
+          <div class="cs-entry-date">Phase 1 · Step 2</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Building the Business Plan</div>
+          <p class="cs-entry-desc">The full structure of our business plan — what sections we included, what we wrote in each, and how the financial model came together.</p>
+          <div class="cs-entry-date">Phase 1 · Step 3</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Logo Development</div>
+          <p class="cs-entry-desc">From brief to final mark — the iterations, the decisions, and why we landed on a shield with a tree rooted in Belize's national motto.</p>
+          <div class="cs-entry-date">Phase 1 · Step 4</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Brand Palette & Identity</div>
+          <p class="cs-entry-desc">How we chose forest green, dark slate, and amber gold — and what each color communicates about who we are and what we stand for.</p>
+          <div class="cs-entry-date">Phase 1 · Step 5</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+        <div class="cs-entry live reveal">
+          <div class="cs-status live">● Published</div>
+          <div class="cs-entry-title">Service Structure & Pricing</div>
+          <p class="cs-entry-desc">How we structured the five-phase framework, what we decided to offer first, and how we set prices for a brand-new consulting firm.</p>
+          <div class="cs-entry-date">Phase 1 · Step 6</div>
+          <a href="#" class="cs-entry-link">Read the story →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2 entries -->
+    <div class="cs-phase-group">
+      <div class="cs-phase-label">
+        <span>🌿 Phase 2 — Presence</span>
+        <div class="cs-phase-label-line"></div>
+        <span class="badge badge-green">In Progress</span>
+      </div>
+      <div class="cs-entries">
+        <div class="cs-entry in-progress reveal">
+          <div class="cs-status progress">● In Progress</div>
+          <div class="cs-entry-title">Website Structure & Copy</div>
+          <p class="cs-entry-desc">How we planned the six-page site, what decisions drove the structure, and how we wrote copy that sells without feeling like a sales pitch.</p>
+          <div class="cs-entry-date">Phase 2 · Step 1</div>
+        </div>
+        <div class="cs-entry coming reveal">
+          <div class="cs-status coming">○ Coming Soon</div>
+          <div class="cs-entry-title">Platform Selection</div>
+          <p class="cs-entry-desc">Why we chose our platform, what we compared, and what criteria matter most for a consulting firm at this stage.</p>
+          <div class="cs-entry-date">Phase 2 · Step 2</div>
+        </div>
+        <div class="cs-entry coming reveal">
+          <div class="cs-status coming">○ Coming Soon</div>
+          <div class="cs-entry-title">Launch & First Outreach</div>
+          <p class="cs-entry-desc">The first week live — what our outreach strategy looked like, who we contacted, and what the response was.</p>
+          <div class="cs-entry-date">Phase 2 · Step 3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3 entries -->
+    <div class="cs-phase-group">
+      <div class="cs-phase-label">
+        <span>🌳 Phase 3 — Systems</span>
+        <div class="cs-phase-label-line"></div>
+        <span class="badge badge-ghost">Coming Soon</span>
+      </div>
+      <div class="cs-entries">
+        <div class="cs-entry coming reveal">
+          <div class="cs-status coming">○ Coming Soon</div>
+          <div class="cs-entry-title">Choosing Our CRM</div>
+          <p class="cs-entry-desc">How we evaluated options, what criteria we used, and which CRM we selected for a remote-first consulting business.</p>
+          <div class="cs-entry-date">Phase 3 · Step 1</div>
+        </div>
+        <div class="cs-entry coming reveal">
+          <div class="cs-status coming">○ Coming Soon</div>
+          <div class="cs-entry-title">Building Our First Automations</div>
+          <p class="cs-entry-desc">The specific workflows we automated first and the time it saved us immediately.</p>
+          <div class="cs-entry-date">Phase 3 · Step 2</div>
+        </div>
+        <div class="cs-entry coming reveal">
+          <div class="cs-status coming">○ Coming Soon</div>
+          <div class="cs-entry-title">Writing Our SOPs</div>
+          <p class="cs-entry-desc">How we documented our own processes and what a real SOP looks like for a service business.</p>
+          <div class="cs-entry-date">Phase 3 · Step 3</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-strip">
+    <h2>Want to see this process applied to your business?</h2>
+    <div class="rule"></div>
+    <p>Book a free discovery call. We will walk you through exactly how the five-phase journey would look for your specific business.</p>
+    <a href="contact.html" class="btn btn-gold">Book a Free Discovery Call</a>
+  </div>
+
+  <div id="footer-slot"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

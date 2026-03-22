@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Canopy Consulting</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .audit-feature {
+      background: var(--amber-pale);
+      border-left: 4px solid var(--amber);
+      padding: 60px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .audit-feature h2 { font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--forest); margin-bottom: 12px; }
+    .audit-feature p  { font-size: 15px; line-height: 1.85; color: var(--text-mid); margin-bottom: 20px; }
+
+    .audit-what h4 { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+    .audit-what ul { margin-bottom: 24px; }
+    .audit-what li { font-size: 14px; color: var(--text-mid); padding: 7px 0; border-bottom: 1px solid rgba(184,134,11,0.2); display: flex; align-items: center; gap: 10px; }
+    .audit-what li::before { content:''; width:5px; height:1px; background:var(--amber); flex-shrink:0; }
+
+    .pricing-note { font-size: 13px; color: var(--text-light); font-style: italic; }
+
+    .services-full { padding: 100px 80px; }
+
+    .service-full-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--border);
+      margin-bottom: 2px;
+      transition: border-color 0.2s;
+    }
+
+    .service-full-card:hover { border-color: var(--amber); }
+
+    .sfc-left { padding: 52px 52px; border-right: 1px solid var(--border); }
+    .sfc-right { padding: 52px 52px; background: var(--offwhite); }
+
+    .sfc-phase { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+    .sfc-title { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .sfc-tagline { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--mid-green); margin-bottom: 20px; }
+    .sfc-desc { font-size: 14px; line-height: 1.85; color: var(--text-mid); margin-bottom: 24px; }
+
+    .sfc-includes h4 { font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--forest); margin-bottom: 16px; }
+    .sfc-includes li { font-size: 13px; color: var(--text-mid); padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
+    .sfc-includes li::before { content:''; width:5px; height:1px; background:var(--amber); flex-shrink:0; }
+
+    .sfc-price { font-family: var(--font-display); font-size: 28px; font-weight: 700; color: var(--forest); margin: 20px 0 4px; }
+    .sfc-price-note { font-size: 12px; color: var(--text-light); margin-bottom: 24px; }
+
+    .service-full-card.dimmed { opacity: 0.65; }
+    .service-full-card.dimmed .sfc-left { background: var(--cream); }
+
+    .process-section { padding: 100px 80px; background: var(--cream); }
+
+    .process-steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); margin-top: 56px; }
+
+    .process-step { background: var(--cream); padding: 36px 28px; position: relative; }
+    .process-step:hover { background: #fff; }
+
+    .ps-num { font-family: var(--font-display); font-size: 48px; font-weight: 900; color: rgba(26,77,58,0.07); line-height: 1; margin-bottom: 12px; }
+    .ps-title { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--forest); margin-bottom: 8px; }
+    .ps-desc  { font-size: 12px; line-height: 1.7; color: var(--text-mid); }
+
+    .ps-connector {
+      position: absolute;
+      top: 50%; right: -14px;
+      width: 26px; height: 1px;
+      background: var(--amber);
+      z-index: 2;
+    }
+
+    .process-step:last-child .ps-connector { display: none; }
+  </style>
+</head>
+<body>
+  <div id="nav-slot"></div>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Services</span></div>
+      <h1>Work with us at <em>any stage</em> of your journey.</h1>
+      <p class="lead">We offer services across all five phases of the Canopy Growth Journey. Phases 1 and 2 are available now. Phases 3 through 5 are in development — join the waitlist.</p>
+    </div>
+  </div>
+
+  <!-- ── AUDIT ENTRY ── -->
+  <div class="audit-feature">
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;"><div class="eyebrow-line"></div><span>Start Here</span></div>
+      <h2>The Business Audit</h2>
+      <p>Not sure where to start? The Business Audit is your entry point. We take a deep look at your business, identify inefficiencies and missed opportunities, and give you a clear roadmap — before you commit to anything else.</p>
+      <p class="pricing-note">[INSERT PRICE] · Deliverable in 1–2 weeks · Audit fee credited toward any package</p>
+      <a href="contact.html" class="btn btn-gold" style="margin-top:8px;">Book a Business Audit</a>
+    </div>
+    <div class="audit-what reveal">
+      <h4>What the Audit Includes</h4>
+      <ul>
+        <li>60-minute deep-dive discovery call</li>
+        <li>Full review of your current operations</li>
+        <li>Identification of inefficiencies and revenue leaks</li>
+        <li>Competitive and market position snapshot</li>
+        <li>Written findings report</li>
+        <li>Clear prioritized action plan</li>
+        <li>Phase recommendation for next steps</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── FULL SERVICES ── -->
+  <div class="services-full">
+    <div class="eyebrow" style="margin-bottom:12px;"><div class="eyebrow-line"></div><span>All Packages</span></div>
+    <h2 class="section-title" style="margin-bottom:48px;">Choose the right package for where you are.</h2>
+
+    <!-- Package 1 -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="sfc-phase">Phase 1 — Foundation · Available Now</div>
+        <h3 class="sfc-title">Launch & Foundation Package</h3>
+        <div class="sfc-tagline">Build your business on solid ground.</div>
+        <p class="sfc-desc">For new businesses and entrepreneurs ready to do it right from day one. We create the complete strategic and financial blueprint your business needs to launch with confidence and attract funding.</p>
+        <span class="badge badge-gold">Available Now</span>
+        <div class="sfc-price">[INSERT PRICE]</div>
+        <div class="sfc-price-note">Typical engagement: 4–6 weeks</div>
+        <a href="contact.html" class="btn btn-dark">Start Here</a>
+      </div>
+      <div class="sfc-right">
+        <div class="sfc-includes">
+          <h4>Everything Included</h4>
+          <ul>
+            <li>Business plan (loan & investor ready)</li>
+            <li>Financial projections (3-year model)</li>
+            <li>Cash flow model</li>
+            <li>Market research & competitive analysis</li>
+            <li>Business model design</li>
+            <li>Pricing & offer structure</li>
+            <li>Go-to-market strategy</li>
+            <li>2 revision rounds</li>
+            <li>Final presentation deck</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Package 2 -->
+    <div class="service-full-card reveal">
+      <div class="sfc-left">
+        <div class="sfc-phase">Phase 2 — Presence · Available Now</div>
+        <h3 class="sfc-title">Brand & Presence Package</h3>
+        <div class="sfc-tagline">Make your business impossible to ignore.</div>
+        <p class="sfc-desc">For businesses that need a professional digital footprint that actually works. We build websites designed to convert, brand identities that build trust, and systems that capture leads automatically.</p>
+        <span class="badge badge-gold">Available Now</span>
+        <div class="sfc-price">[INSERT PRICE]</div>
+        <div class="sfc-price-note">Typical engagement: 3–5 weeks</div>
+        <a href="contact.html" class="btn btn-dark">Start Here</a>
+      </div>
+      <div class="sfc-right">
+        <div class="sfc-includes">
+          <h4>Everything Included</h4>
+          <ul>
+            <li>Website design & development</li>
+            <li>Mobile-optimized, fast-loading</li>
+            <li>Brand identity (logo, colors, fonts)</li>
+            <li>Brand guidelines document</li>
+            <li>Lead capture & contact forms</li>
+            <li>Google Business profile setup</li>
+            <li>Basic SEO foundation</li>
+            <li>Directory listings setup</li>
+            <li>1-month post-launch support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Package 3 (coming soon) -->
+    <div class="service-full-card dimmed reveal">
+      <div class="sfc-left">
+        <div class="sfc-phase">Phase 3 — Systems · Coming Soon</div>
+        <h3 class="sfc-title">Systems Setup Package</h3>
+        <div class="sfc-tagline">Turn chaos into repeatable, scalable systems.</div>
+        <p class="sfc-desc">For businesses already generating revenue but running on memory and improvisation. We install the operational systems that let the business run predictably — whether you are in the room or not.</p>
+        <span class="badge badge-ghost">Coming Soon</span>
+        <div class="sfc-price">[INSERT PRICE]</div>
+        <div class="sfc-price-note">Typical engagement: 4–8 weeks</div>
+        <a href="contact.html" class="btn btn-ghost-dark">Join the Waitlist</a>
+      </div>
+      <div class="sfc-right">
+        <div class="sfc-includes">
+          <h4>Everything Included</h4>
+          <ul>
+            <li>CRM selection & full implementation</li>
+            <li>Lead pipeline setup</li>
+            <li>Workflow automation</li>
+            <li>Email & follow-up sequences</li>
+            <li>SOP creation & documentation</li>
+            <li>Internal process design</li>
+            <li>Tech stack audit & consolidation</li>
+            <li>Team training & handoff</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Package 4 (coming soon) -->
+    <div class="service-full-card dimmed reveal">
+      <div class="sfc-left">
+        <div class="sfc-phase">Phases 4 & 5 — Optimization & Scale · Coming Soon</div>
+        <h3 class="sfc-title">Growth & Scale Program</h3>
+        <div class="sfc-tagline">More profit. More reach. No more chaos.</div>
+        <p class="sfc-desc">For businesses with strong foundations that are ready to grow significantly. We optimize for profit, integrate AI and advanced automation, and provide ongoing strategic guidance through a fractional COO engagement.</p>
+        <span class="badge badge-ghost">Coming Soon</span>
+        <div class="sfc-price">[INSERT PRICE] / month</div>
+        <div class="sfc-price-note">Ongoing retainer engagement</div>
+        <a href="contact.html" class="btn btn-ghost-dark">Join the Waitlist</a>
+      </div>
+      <div class="sfc-right">
+        <div class="sfc-includes">
+          <h4>Everything Included</h4>
+          <ul>
+            <li>Monthly strategy sessions</li>
+            <li>KPI dashboard setup & tracking</li>
+            <li>Profitability & cost analysis</li>
+            <li>AI tool integration</li>
+            <li>Advanced automation</li>
+            <li>Conversion optimization</li>
+            <li>Expansion strategy</li>
+            <li>Priority access & support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── HOW IT WORKS ── -->
+  <div class="process-section">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>How It Works</span></div>
+    <h2 class="section-title">From first call to finished deliverable.</h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Discovery Call</div>
+        <p class="ps-desc">Free 30-minute call to understand your business, your challenges, and your goals.</p>
+        <div class="ps-connector"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">02</div>
+        <div class="ps-title">Business Audit</div>
+        <p class="ps-desc">Deep-dive review of your operations. Written findings and action plan delivered.</p>
+        <div class="ps-connector"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Roadmap</div>
+        <p class="ps-desc">We present findings and propose the right package for your current stage.</p>
+        <div class="ps-connector"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">04</div>
+        <div class="ps-title">Implementation</div>
+        <p class="ps-desc">We execute the agreed package. Weekly check-ins throughout the engagement.</p>
+        <div class="ps-connector"></div>
+      </div>
+      <div class="process-step reveal">
+        <div class="ps-num">05</div>
+        <div class="ps-title">Ongoing Support</div>
+        <p class="ps-desc">Option to continue with a monthly retainer for optimization and advisory.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-strip">
+    <h2>Not sure which package is right for you?</h2>
+    <div class="rule"></div>
+    <p>Start with a free discovery call and we will tell you exactly where to begin.</p>
+    <a href="contact.html" class="btn btn-gold">Book a Free Discovery Call</a>
+  </div>
+
+  <div id="footer-slot"></div>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>

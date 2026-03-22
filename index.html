@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canopy Consulting — Deep roots. Wide reach. Unstoppable growth.</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* ── HOME-SPECIFIC ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--forest);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: var(--nav-h);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 65% 40%, rgba(61,122,90,0.28) 0%, transparent 55%),
+        radial-gradient(ellipse at 10% 90%, rgba(184,134,11,0.06) 0%, transparent 45%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      padding: 80px 60px 80px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(40px, 5vw, 66px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 em { font-style: italic; color: var(--amber-light); }
+
+    .hero-sub {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      line-height: 1.75;
+      color: rgba(255,255,255,0.72);
+      max-width: 460px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 80px 80px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-shield-wrap {
+      position: relative;
+    }
+
+    .hero-shield-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -40px;
+      background: radial-gradient(ellipse, rgba(61,122,90,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-tagline-bar {
+      background: rgba(255,255,255,0.04);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 20px 80px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      position: relative;
+      z-index: 2;
+      grid-column: 1 / -1;
+      align-self: flex-end;
+    }
+
+    .tagline-bar-line { flex: 1; height: 1px; background: rgba(255,255,255,0.08); }
+
+    .tagline-bar-text {
+      font-family: var(--font-serif);
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+
+    /* ── INTRO STRIP ── */
+    .intro-strip {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      background: var(--cream);
+      min-height: 200px;
+    }
+
+    .intro-strip-col {
+      padding: 60px 64px;
+    }
+
+    .intro-strip-col p {
+      font-family: var(--font-serif);
+      font-size: 19px;
+      line-height: 1.75;
+      color: var(--text-mid);
+    }
+
+    .intro-divider { background: var(--border); }
+
+    .intro-stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 32px;
+    }
+
+    .stat-item {}
+
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 900;
+      color: var(--forest);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* ── JOURNEY PREVIEW ── */
+    .journey-preview { padding: 100px 80px; }
+
+    .journey-preview .header-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 60px;
+    }
+
+    .phase-cards { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: var(--border); }
+
+    .phase-card {
+      background: var(--offwhite);
+      padding: 36px 24px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      border-top: 3px solid transparent;
+      text-decoration: none;
+      display: block;
+    }
+
+    .phase-card:hover { background: var(--light-green); transform: translateY(-3px); border-top-color: var(--forest); }
+    .phase-card.available { border-top-color: var(--amber); }
+
+    .pc-num {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 900;
+      color: rgba(26,77,58,0.07);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .pc-icon { font-size: 24px; margin-bottom: 10px; }
+
+    .pc-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--forest);
+      margin-bottom: 8px;
+    }
+
+    .pc-desc { font-size: 12px; line-height: 1.6; color: var(--text-mid); margin-bottom: 14px; }
+
+    /* ── CASE STUDY TEASER ── */
+    .cs-teaser {
+      background: var(--forest);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .cs-teaser-left { padding: 100px 80px; }
+    .cs-teaser-right {
+      background: rgba(255,255,255,0.03);
+      border-left: 1px solid rgba(255,255,255,0.06);
+      padding: 100px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-entry {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .timeline-entry:last-child { border-bottom: none; }
+
+    .te-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 4px; }
+
+    .te-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      border: 2px solid var(--amber);
+      flex-shrink: 0;
+    }
+
+    .te-dot.filled { background: var(--amber); }
+
+    .te-line { width: 1px; flex: 1; background: rgba(255,255,255,0.08); margin-top: 6px; min-height: 24px; }
+
+    .te-phase { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 3px; }
+    .te-title { font-family: var(--font-display); font-size: 16px; color: #fff; margin-bottom: 3px; }
+    .te-status { font-size: 11px; color: rgba(255,255,255,0.38); }
+    .te-status.live { color: #5DCAA5; }
+
+    /* ── WHY ── */
+    .why-section { padding: 100px 80px; background: var(--cream); }
+
+    .why-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; background: var(--border); margin-top: 56px; }
+
+    .why-card { background: var(--cream); padding: 48px 36px; transition: background 0.2s; }
+    .why-card:hover { background: #fff; }
+
+    .wc-icon {
+      width: 44px; height: 44px;
+      background: var(--forest);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .wc-icon svg { width: 22px; height: 22px; }
+
+    .wc-title { font-family: var(--font-display); font-size: 21px; font-weight: 700; color: var(--forest); margin-bottom: 10px; }
+    .wc-text  { font-size: 14px; line-height: 1.8; color: var(--text-mid); }
+
+    /* ── SERVICES PREVIEW ── */
+    .services-preview { padding: 100px 80px; }
+
+    .sp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--border); margin-top: 56px; }
+
+    .sp-card {
+      background: var(--offwhite);
+      padding: 48px 40px;
+      transition: background 0.2s;
+      position: relative;
+    }
+
+    .sp-card:hover { background: var(--light-green); }
+    .sp-card.dimmed { opacity: 0.65; }
+
+    .sp-phase { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+
+    .sp-title { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--forest); margin-bottom: 10px; }
+
+    .sp-text { font-size: 14px; line-height: 1.8; color: var(--text-mid); margin-bottom: 20px; }
+
+    .sp-list { margin-bottom: 28px; }
+
+    .sp-list li {
+      font-size: 13px;
+      color: var(--text-mid);
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sp-list li::before { content:''; width:5px; height:1px; background:var(--amber); flex-shrink:0; }
+
+    .sp-tag {
+      position: absolute;
+      top: 24px; right: 24px;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav injected by components.js -->
+  <div id="nav-slot"></div>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="hero-content anim-1">
+      <div class="eyebrow" style="margin-bottom:24px;">
+        <div class="eyebrow-line"></div>
+        <span>Business Consulting · Belize</span>
+      </div>
+      <h1>From <em>chaos</em> to a business built to last.</h1>
+      <p class="hero-sub">We partner with small and mid-sized businesses to build the foundations, systems, and strategies they need to grow with confidence — not chaos.</p>
+      <div class="hero-actions">
+        <a href="pages/contact.html" class="btn btn-gold">Book a Free Discovery Call</a>
+        <a href="pages/journey.html" class="btn btn-ghost">See the Journey</a>
+      </div>
+    </div>
+
+    <div class="hero-visual anim-2">
+      <div class="hero-shield-wrap">
+        <svg width="300" height="336" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M40 4 L74 14 L74 58 Q74 80 40 90 Q6 80 6 58 L6 14 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linejoin="round"/>
+          <path d="M18 14 L18 24 L40 24 L62 24 L62 14" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="37" y="60" width="6" height="22" rx="2" fill="rgba(255,255,255,0.45)"/>
+          <path d="M40 76 Q30 79 22 83" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M40 76 Q50 79 58 83" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M40 78 L40 85" stroke="rgba(255,255,255,0.35)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <ellipse cx="27" cy="49" rx="10" ry="6" fill="#B8860B" transform="rotate(-28 27 49)"/>
+          <ellipse cx="53" cy="49" rx="10" ry="6" fill="#B8860B" transform="rotate(28 53 49)"/>
+          <ellipse cx="40" cy="35" rx="26" ry="20" fill="rgba(61,122,90,0.55)"/>
+          <ellipse cx="30" cy="30" rx="16" ry="13" fill="rgba(93,202,165,0.45)"/>
+          <ellipse cx="50" cy="30" rx="16" ry="13" fill="rgba(93,202,165,0.45)"/>
+          <ellipse cx="40" cy="24" rx="14" ry="14" fill="rgba(93,202,165,0.52)"/>
+          <ellipse cx="34" cy="22" rx="8" ry="7" fill="rgba(159,225,203,0.45)"/>
+          <ellipse cx="46" cy="22" rx="8" ry="7" fill="rgba(159,225,203,0.45)"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="tagline-bar">
+      <div class="tagline-bar-line"></div>
+      <span class="tagline-bar-text">Deep roots. Wide reach. Unstoppable growth.</span>
+      <div class="tagline-bar-line"></div>
+    </div>
+  </section>
+
+  <!-- ── INTRO STRIP ── -->
+  <div class="intro-strip">
+    <div class="intro-strip-col">
+      <div class="eyebrow" style="margin-bottom:16px;">
+        <div class="eyebrow-line"></div>
+        <span>Who We Are</span>
+      </div>
+      <p>Canopy Consulting is a Belize-based business consulting firm founded to give small and mid-sized businesses access to structured, strategic support. We do not just advise — we build alongside you, from your first business plan to a fully scaled operation.</p>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-strip-col intro-stat">
+      <div class="stat-item">
+        <div class="stat-num">5</div>
+        <div class="stat-label">Phase growth framework</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">1</div>
+        <div class="stat-label">Dedicated partner, start to finish</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── JOURNEY PREVIEW ── -->
+  <div class="journey-preview">
+    <div class="header-row">
+      <div>
+        <div class="eyebrow"><div class="eyebrow-line"></div><span>The Growth Journey</span></div>
+        <h2 class="section-title">Every business grows through five stages.</h2>
+      </div>
+      <p class="section-lead">Whether you are just starting out or ready to scale, there is a phase for where you are — and a clear path forward.</p>
+    </div>
+    <div class="phase-cards">
+      <a href="pages/journey.html" class="phase-card available">
+        <div class="pc-num">01</div>
+        <div class="pc-icon">🌱</div>
+        <div class="pc-name">Foundation</div>
+        <p class="pc-desc">Business plans, financial projections, loan prep, market positioning.</p>
+        <span class="badge badge-gold">Available</span>
+      </a>
+      <a href="pages/journey.html" class="phase-card available">
+        <div class="pc-num">02</div>
+        <div class="pc-icon">🌿</div>
+        <div class="pc-name">Presence</div>
+        <p class="pc-desc">Website design, brand identity, lead capture, digital footprint.</p>
+        <span class="badge badge-gold">Available</span>
+      </a>
+      <a href="pages/journey.html" class="phase-card">
+        <div class="pc-num">03</div>
+        <div class="pc-icon">🌳</div>
+        <div class="pc-name">Systems</div>
+        <p class="pc-desc">CRM, workflow automation, SOP documentation, process design.</p>
+        <span class="badge badge-ghost">Coming Soon</span>
+      </a>
+      <a href="pages/journey.html" class="phase-card">
+        <div class="pc-num">04</div>
+        <div class="pc-icon">🌲</div>
+        <div class="pc-name">Optimization</div>
+        <p class="pc-desc">KPI dashboards, profitability analysis, cost reduction, conversion.</p>
+        <span class="badge badge-ghost">Coming Soon</span>
+      </a>
+      <a href="pages/journey.html" class="phase-card">
+        <div class="pc-num">05</div>
+        <div class="pc-icon">🌴</div>
+        <div class="pc-name">Scale</div>
+        <p class="pc-desc">AI integration, advanced automation, expansion strategy, COO advisory.</p>
+        <span class="badge badge-ghost">Coming Soon</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ── CASE STUDY TEASER ── -->
+  <div class="cs-teaser">
+    <div class="cs-teaser-left">
+      <div class="eyebrow"><div class="eyebrow-line"></div><span>Live Case Study</span></div>
+      <h2 class="section-title light" style="margin-bottom:16px;">We don't just teach it. We build it.</h2>
+      <p class="section-lead light" style="margin-bottom:36px;">We are building Canopy Consulting using our own five-phase framework — in real time and with full transparency. Follow every decision we make and see exactly what each phase looks like in practice.</p>
+      <a href="pages/case-study.html" class="btn btn-gold">Follow Our Journey</a>
+    </div>
+    <div class="cs-teaser-right">
+      <div class="timeline-entry">
+        <div class="te-dot-col"><div class="te-dot filled"></div><div class="te-line"></div></div>
+        <div><div class="te-phase">Phase 1 — Foundation</div><div class="te-title">Naming, positioning & business plan</div><div class="te-status live">● Live — Read the story</div></div>
+      </div>
+      <div class="timeline-entry">
+        <div class="te-dot-col"><div class="te-dot filled"></div><div class="te-line"></div></div>
+        <div><div class="te-phase">Phase 1 — Foundation</div><div class="te-title">Brand identity & logo development</div><div class="te-status live">● Live — Read the story</div></div>
+      </div>
+      <div class="timeline-entry">
+        <div class="te-dot-col"><div class="te-dot filled"></div><div class="te-line"></div></div>
+        <div><div class="te-phase">Phase 2 — Presence</div><div class="te-title">Website design & structure</div><div class="te-status live">● In Progress</div></div>
+      </div>
+      <div class="timeline-entry">
+        <div class="te-dot-col"><div class="te-dot"></div><div class="te-line"></div></div>
+        <div><div class="te-phase">Phase 3 — Systems</div><div class="te-title">CRM setup & workflow automation</div><div class="te-status">Coming soon</div></div>
+      </div>
+      <div class="timeline-entry">
+        <div class="te-dot-col"><div class="te-dot"></div></div>
+        <div><div class="te-phase">Phases 4 & 5</div><div class="te-title">Optimization & Scale</div><div class="te-status">On the horizon</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── WHY ── -->
+  <div class="why-section">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Why Canopy Consulting</span></div>
+    <h2 class="section-title">Strategy. Systems. Results.</h2>
+    <div class="why-cards">
+      <div class="why-card reveal">
+        <div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+        <h3 class="wc-title">End-to-End Partnership</h3>
+        <p class="wc-text">Most consultants offer strategy or execution. We offer both. From your first business plan to a fully optimized, scaled operation — we are with you at every stage.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3 class="wc-title">Radical Transparency</h3>
+        <p class="wc-text">We build our own business using the exact same framework we sell. You can follow every decision we make, see the results, and buy into a process you have already watched work.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="wc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3 class="wc-title">Rooted in Belize</h3>
+        <p class="wc-text">We understand the Belizean business landscape — its opportunities, its challenges, and its culture. We are here, building alongside you, not advising from a distance.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES PREVIEW ── -->
+  <div class="services-preview">
+    <div class="eyebrow"><div class="eyebrow-line"></div><span>Services</span></div>
+    <h2 class="section-title">Where are you in your journey?</h2>
+    <div class="sp-grid">
+      <div class="sp-card reveal">
+        <span class="sp-tag badge badge-gold">Available Now</span>
+        <div class="sp-phase">Phase 1 — Foundation</div>
+        <h3 class="sp-title">Launch & Foundation Package</h3>
+        <p class="sp-text">Build on solid ground. We create the strategic and financial blueprint your business needs to launch with confidence.</p>
+        <ul class="sp-list">
+          <li>Investor and loan-ready business plan</li>
+          <li>Financial projections & cash flow model</li>
+          <li>Market research & competitive positioning</li>
+          <li>Pricing strategy and offer structure</li>
+        </ul>
+        <a href="pages/services.html" class="btn btn-dark">Learn More</a>
+      </div>
+      <div class="sp-card reveal">
+        <span class="sp-tag badge badge-gold">Available Now</span>
+        <div class="sp-phase">Phase 2 — Presence</div>
+        <h3 class="sp-title">Brand & Presence Package</h3>
+        <p class="sp-text">Make your business visible and credible. Websites built to generate leads, not just look good.</p>
+        <ul class="sp-list">
+          <li>Website design & development</li>
+          <li>Brand identity & visual guidelines</li>
+          <li>Lead capture & contact systems</li>
+          <li>Google Business & directory setup</li>
+        </ul>
+        <a href="pages/services.html" class="btn btn-dark">Learn More</a>
+      </div>
+      <div class="sp-card dimmed reveal">
+        <span class="sp-tag badge badge-ghost">Coming Soon</span>
+        <div class="sp-phase">Phase 3 — Systems</div>
+        <h3 class="sp-title">Systems Setup Package</h3>
+        <p class="sp-text">CRM implementation, workflow automation, and SOP documentation. Turn chaos into repeatable systems.</p>
+        <ul class="sp-list">
+          <li>CRM selection & full setup</li>
+          <li>Workflow & task automation</li>
+          <li>SOP creation & documentation</li>
+          <li>Tech stack consolidation</li>
+        </ul>
+        <a href="pages/contact.html" class="btn btn-ghost-dark">Join the Waitlist</a>
+      </div>
+      <div class="sp-card dimmed reveal">
+        <span class="sp-tag badge badge-ghost">Coming Soon</span>
+        <div class="sp-phase">Phases 4 & 5 — Optimization & Scale</div>
+        <h3 class="sp-title">Growth & Scale Program</h3>
+        <p class="sp-text">KPI dashboards, profitability optimization, AI integration, and fractional COO advisory.</p>
+        <ul class="sp-list">
+          <li>KPI tracking & dashboards</li>
+          <li>Profitability & cost analysis</li>
+          <li>AI tool integration</li>
+          <li>Fractional COO retainer</li>
+        </ul>
+        <a href="pages/contact.html" class="btn btn-ghost-dark">Join the Waitlist</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA ── -->
+  <div class="cta-strip">
+    <h2>Ready to build something that lasts?</h2>
+    <div class="rule"></div>
+    <p>Start with a free 30-minute discovery call. No pressure. Just an honest conversation about where your business is and where it could be.</p>
+    <a href="pages/contact.html" class="btn btn-gold">Book Your Free Discovery Call</a>
+  </div>
+
+  <!-- Footer injected by components.js -->
+  <div id="footer-slot"></div>
+
+  <script src="js/components.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
