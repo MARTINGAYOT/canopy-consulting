@@ -6,26 +6,7 @@
 const NAV_HTML = `
 <nav class="nav" id="nav">
   <a href="/canopy-consulting/index.html" class="nav-logo">
-    <svg viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M40 4 L74 14 L74 58 Q74 80 40 90 Q6 80 6 58 L6 14 Z" fill="none" stroke="#1A4D3A" stroke-width="4" stroke-linejoin="round"/>
-      <path d="M18 14 L18 24 L40 24 L62 24 L62 14" fill="none" stroke="#1A4D3A" stroke-width="4" stroke-linejoin="round"/>
-      <rect x="37" y="60" width="6" height="22" rx="2" fill="#2C3E35"/>
-      <path d="M40 76 Q30 78 22 83" stroke="#2C3E35" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <path d="M40 76 Q50 78 58 83" stroke="#2C3E35" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <path d="M40 78 L40 85" stroke="#2C3E35" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-      <ellipse cx="27" cy="49" rx="10" ry="6" fill="#B8860B" transform="rotate(-28 27 49)"/>
-      <ellipse cx="53" cy="49" rx="10" ry="6" fill="#B8860B" transform="rotate(28 53 49)"/>
-      <ellipse cx="40" cy="35" rx="26" ry="20" fill="#1A4D3A"/>
-      <ellipse cx="30" cy="30" rx="16" ry="13" fill="#2E7D52"/>
-      <ellipse cx="50" cy="30" rx="16" ry="13" fill="#2E7D52"/>
-      <ellipse cx="40" cy="24" rx="14" ry="14" fill="#2E7D52"/>
-      <ellipse cx="34" cy="22" rx="8" ry="7" fill="#3D7A5A"/>
-      <ellipse cx="46" cy="22" rx="8" ry="7" fill="#3D7A5A"/>
-    </svg>
-    <div class="nav-logo-text">
-      <span class="name">Canopy Consulting</span>
-      <span class="region">Belize</span>
-    </div>
+    <img src="/canopy-consulting/Logo/logo.png" alt="Canopy Consulting" class="nav-logo-img"/>
   </a>
   <ul class="nav-links">
     <li><a href="/canopy-consulting/pages/about.html">About</a></li>
@@ -40,8 +21,7 @@ const FOOTER_HTML = `
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
-      <div class="fn">Canopy Consulting</div>
-      <div class="ft">Belize</div>
+      <img src="/canopy-consulting/Logo/logo.png" alt="Canopy Consulting" class="footer-logo-img" style="margin-bottom:16px;"/>
       <p>We help small and mid-sized businesses build the foundations, systems, and strategies they need to grow with confidence. Deep roots. Wide reach. Unstoppable growth.</p>
     </div>
     <div class="footer-col">
