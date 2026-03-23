@@ -27,7 +27,7 @@
   --font-serif:   'Cormorant Garamond', Georgia, serif;
   --font-sans:    'Lato', sans-serif;
 
-  --nav-h: 72px;
+  --nav-h: 88px;
   --section-pad: 100px 80px;
   --radius: 2px;
 }
@@ -479,7 +479,7 @@ hr.fancy {
 
 /* ── LOGO IMAGE ── */
 .nav-logo-img {
-  height: 42px;
+  height: 64px;
   width: auto;
   display: block;
   object-fit: contain;
